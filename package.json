@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm-run-all build-db push-db build-tracker build-geo build-app",
+    "build": "npm-run-all build-db check-db build-tracker build-geo build-app",
     "start": "next start",
     "build-docker": "npm-run-all build-db build-tracker build-geo build-app",
     "start-docker": "npm-run-all check-db update-tracker start-server",
@@ -22,7 +22,6 @@
     "build-db": "npm-run-all copy-db-files build-db-client",
     "build-lang": "npm-run-all format-lang compile-lang download-country-names download-language-names",
     "build-geo": "node scripts/build-geo.js",
-    "push-db": "prisma db push",
     "build-db-schema": "prisma db pull",
     "build-db-client": "prisma generate",
     "update-tracker": "node scripts/update-tracker.js",
